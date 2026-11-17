@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -75,11 +74,11 @@ class MoviePoster extends StatelessWidget {
       child: const Center(child: Icon(Icons.movie_outlined, size: 40)),
     );
     if (url == null) return placeholder;
-    return CachedNetworkImage(
-      imageUrl: url!,
+    return Image.network(
+      url!,
       fit: fit,
-      placeholder: (_, _) => placeholder,
-      errorWidget: (_, _, _) => placeholder,
+      loadingBuilder: (_, child, progress) => progress == null ? child : placeholder,
+      errorBuilder: (_, _, _) => placeholder,
     );
   }
 }

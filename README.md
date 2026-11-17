@@ -118,4 +118,4 @@ flutter test
 ## Tecnologias
 
 Flutter 3.47 · Dart 3.13 · flutter_riverpod 3 + riverpod_generator · Dio 5 ·
-shared_preferences · cached_network_image · intl
+shared_preferences · intl
